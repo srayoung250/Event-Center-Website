@@ -404,6 +404,7 @@ form {
   overflow: hidden;
   align-items: center;
 }
+
 .forming img {
   object-fit: cover;
 }
