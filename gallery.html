@@ -7,48 +7,41 @@
     <link rel="stylesheet" href="/Styles/gallery.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo-box1">
-        <div class="logo">
-          <h1 class="logo-e">E</h1>
-          <h1 class="logo-w">W</h1>
-        </div>
-        <p class="title">Elegant Weddings</p>
-      </div>
-      <button class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <div class="navbarContainer">
-        <ul class="nav-links-one">
+    <div class="transition" id="transition-layer">
+    <header class="active">
+        <a herf="/" class="logo">elegant weddings</a>
+        <button class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav">
           <li>
-            <a href="/index.html">Home</a>
+            <a class="nav-btn" href="/index v2.html"><ion-icon name="home-outline"></ion-icon></a>
           </li>
           <li>
-            <a href="/schedule.html">Booking</a>
-          </li>
-        </ul>
-        <div class="logo-box2">
-          <div class="logo">
-            <h1 class="logo-e">E</h1>
-            <h1 class="logo-w">W</h1>
-          </div>
-          <p class="title">Elegant Weddings</p>
-        </div>
-        <ul class="nav-links-two">
-          <li>
-            <a href="/contact.html">Contact</a>
+            <a class="nav-btn" href="/schedule.html">Booking</a>
           </li>
           <li>
-            <a href="/gallery.html">Gallery</a>
+            <a class="nav-btn" href="#" data-target="contact">contact</a>
           </li>
           <li>
-            <a href="Testimonials.html">Testimonials</a>
+            <a  class="nav-btn" href="/gallery.html">gallery</a>
+          </li>
+          <li>
+            <a class="nav-btn" herf="#" data-target="--portfolio"
+              >portfolio</a
+            >
+          </li>
+          <li>
+            <a class="nav-btn" herf="#" data-target="services">services</a>
           </li>
         </ul>
-      </div>
-    </nav>
+        <div class="search">
+        <input type="text" placeholder="Search" /><ion-icon
+          name="search-outline"
+        ></ion-icon>
+    </header>
     <div class="gallery">
       <h1>Gallery</h1>
       <p>
@@ -113,10 +106,16 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
-    <footer>
-      <p>&copy; 2024 Elegant Weddings Event Center. All rights reserved.</p>
-    </footer>
   </body>
-  <script src="/script.js"></script>
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="/script2.js"></script>
 </html>

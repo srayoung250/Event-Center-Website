@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Italiana&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&family=Italiana&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parisienne&display=swap");
+
+/* General Global Setting */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #ff0066;
+}
+body {
+  position: relative;
+  background: #ffffff;
+  font-family: "roboto", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/*___________________________________________________________________
+Header
+_____________________________________________________________________*/
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 1s;
+  z-index: 1300;
+}
+header {
+  background: #ffffff;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+}
+.hamburger {
+  display: none;
+}
+.hamburger.active {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  row-gap: 4px;
+}
+.hamburger.active .bar {
+  background-color: black;
+  border-radius: 2px;
+  width: 23px;
+  height: 3px;
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  text-transform: capitalize;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav {
+  display: flex;
+}
+.nav li {
+  list-style: none;
+  margin: 0 20px;
+}
+.nav li a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 300;
+  padding: 10px;
+  transition: 0.5s;
+}
+.nav li a:hover {
+  color: var(--primary);
+}
+.search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  transition: 0.5s;
+}
+
+.search input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  outline: none;
+  padding: 0 10px 0 15px;
+}
+.search input::placeholder {
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 350;
+}
+
+.search ion-icon {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border-left: 1px solid rgba(0, 0, 0, 0.35);
+  padding-left: 8px;
+}
+
+/*___________________________________________________________________
+Mobile Nav
+_____________________________________________________________________*/
+
+/*___________________________________________________________________
+Banner
+_____________________________________________________________________*/
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.05s;
+}
+.banner::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+}
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.bg-slide .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  width: 60vw;
+  z-index: 1100;
+  transition: ease-in-out 1.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.bg-slide .content h1 {
+  font-family: "great vibes";
+  font-style: normal;
+  font-size: 6em;
+  text-transform: capitalize;
+}
+.bg-slide .content p {
+  font-family: "Italianno", cursive;
+  font-weight: 200;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+
+.bg-slide.active .content {
+  transform: scale(1) translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.venue-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.bg-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bg-slide.active {
+  opacity: 1;
+}
+.controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 10;
+  left: 90%;
+  gap: 20px;
+  margin-bottom: 0px;
+  display: flex;
+}
+.controls li {
+  list-style: none;
+  display: flex;
+  align-items: end;
+}
+.controls li a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.5s;
+  border: none;
+  background: none;
+  font-style: "Great Vibes", cursive;
+  font-size: 2.5em;
+  font-weight: 800;
+  line-height: 1em;
+  cursor: pointer;
+  padding: 0;
+}
+.controls li a.active,
+.controls li a:hover {
+  font-size: 4em;
+}
+.controls::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -7%;
+  width: 90px;
+  height: 2px;
+  background: #000000;
+}
+.share {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1200;
+}
+.share::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  top: -150%;
+  width: 2px;
+  height: 90px;
+}
+.share p {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-family: "montserrat";
+  font-weight: 300;
+  color: #000000;
+}
+.share a {
+  text-decoration: none;
+  color: #000000;
+}
+.share a ion-icon {
+  font-size: 1.8em;
+}
+.lead {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  z-index: 1200;
+}
+.lead a ion-icon {
+  color: #000000;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+.lead::after,
+.lead::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 5px;
+}
+.lead::before {
+  position: absolute;
+  right: 90%;
+  bottom: 20%;
+  z-index: 1200;
+  top: 40%;
+}
+.lead::after {
+  position: absolute;
+  left: 90%;
+  z-index: 1200;
+  top: 40%;
+}
+
+/*___________________________________________________________________
+Sections General
+_____________________________________________________________________*/
+
+/*___________________________________________________________________
+Services Section
+_____________________________________________________________________*/
+
+/*___________________________________________________________________
+About Section
+_____________________________________________________________________*/
+
+/*___________________________________________________________________
+Perfolio Section
+_____________________________________________________________________*/
+
+/*___________________________________________________________________
+Contact Section
+_____________________________________________________________________*/

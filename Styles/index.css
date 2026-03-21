@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Italiana&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* General Global Setting */
 * {
   box-sizing: border-box;
   margin: 0;
