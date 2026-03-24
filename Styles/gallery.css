@@ -11,6 +11,10 @@
 
 :root {
   --primary: #ff0066;
+  --secondary-clr: #ffffff;
+  --text-clr: #000000;
+  --font-main: "Italianno", cursive;
+  --font-sec: "Great Vibes", cursive;
 }
 body {
   position: relative;
@@ -33,15 +37,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 100px;
-  background: transparent;
+  background: rgb(from var(--secondary-clr) r g b/ 0.25);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: 1s;
   z-index: 1300;
+  box-shadow: 0 0 50px rgb(from var(--text-clr) r g b/ 0.35);
 }
-header {
-  background: #ffffff;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+
+.active .logo span {
+  color: var(--primary);
 }
 .hamburger {
   display: none;
@@ -63,13 +68,14 @@ header {
 }
 
 .logo {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-sec);
   text-transform: capitalize;
   font-size: 40px;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
   color: #000000;
+  cursor: pointer;
 }
 
 .nav {
@@ -135,50 +141,55 @@ header {
 .nav-links-one a:hover {
   color: rgb(194, 180, 106);
 }
+/*________________________________________________________________________________
+Main Section
+_________________________________________________________________________________*/
 
 .gallery {
   display: flex;
   flex-direction: column;
-  padding: 150px 0px 0px 0px;
 }
 .gallery h1 {
-  font-family: "Italianno", cursive;
+  font-family: var(--font-main);
   font-size: 130px;
   font-weight: lighter;
-  min-width: 800px;
-  color: rgb(194, 180, 106);
+  color: rgb(0, 0, 0);
   padding: 30px;
   transform: translatex(60px);
+  transition: 1s;
 }
 .gallery p {
-  font-family: "Italianno", cursive;
+  font-family: var(--font-main);
   font-size: 50px;
   font-weight: lighter;
-  min-width: 800px;
-  padding: 40px;
-  width: 100vw;
+  padding: 40px 50px 150px 0px;
+  width: 100%;
+  transition: 1s;
+  max-width: 1300px;
+  margin-left: 5%;
 }
 .images {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   align-items: start;
   padding: 20px;
-  row-gap: 20px;
-  column-gap: 20px;
+  column-gap: 15px;
 }
-.images img {
+.images .pic {
   max-width: 100%;
-  gap: 20px;
+  height: auto;
+  padding: 10px 0px 0px 0px;
+  opacity: 0;
+  transition: 1s ease;
+  transform: translateY(50%);
 }
-.transition.active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  z-index: 9999;
-  pointer-events: none;
+.images .pic.show {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.G {
+  color: var(--primary);
 }
 
 footer {

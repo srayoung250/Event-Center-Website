@@ -1,5 +1,8 @@
 const slides = document.querySelectorAll(".bg-slide"),
-  btns = document.querySelectorAll(".control-btn");
+  btns = document.querySelectorAll(".control-btn"),
+  message = document.querySelector(".message"),
+  shareLink = window.location.href,
+  shareButton = document.querySelector(".share a");
 
 let index = 0;
 
@@ -8,6 +11,17 @@ function nextSlide() {
   index = (index + 1) % slides.length;
   slides[index].classList.add("active");
 }
+//______________Share Button__________________________//
+
+shareButton.addEventListener("click", () => {
+  message.classList.toggle("active");
+  navigator.clipboard.writeText(shareLink);
+  setTimeout(() => {
+    message.classList.remove("active");
+  }, 3000);
+});
+
+//______________Share Button__________________________//
 
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {

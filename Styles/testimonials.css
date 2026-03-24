@@ -6,6 +6,13 @@
   padding: 0;
   font-family: "", sans-serif;
 }
+:root {
+  --primary: #ff0066;
+  --secondary-clr: #ffffff;
+  --text-clr: #000000;
+  --font-main: "Italianno", cursive;
+  --font-sec: "Great Vibes", cursive;
+}
 
 style {
   background: rgba(100, 100, 100, 0.9);

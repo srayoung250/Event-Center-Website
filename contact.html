@@ -7,100 +7,58 @@
     <link rel="stylesheet" href="/Styles/contact.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="logo-box1">
-        <div class="logo">
-          <h1 class="logo-e">E</h1>
-          <h1 class="logo-w">W</h1>
-        </div>
-        <p class="title">Elegant Weddings</p>
-      </div>
+    <header class="active">
+      <a href="/index v2.html" class="logo"
+        ><span>e</span>legant <span>w</span>eddings</a
+      >
       <button class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <div class="navbarContainer">
-        <ul class="nav-links-one">
-          <li>
-            <a href="/index.html">Home</a>
-          </li>
-          <li>
-            <a href="/schedule.html">Booking</a>
-          </li>
-        </ul>
-        <div class="logo-box2">
-          <div class="logo">
-            <h1 class="logo-e">E</h1>
-            <h1 class="logo-w">W</h1>
-          </div>
-          <p class="title">Elegant Weddings</p>
-        </div>
-        <ul class="nav-links-two">
-          <li>
-            <a href="/contact.html">Contact</a>
-          </li>
-          <li>
-            <a href="/gallery.html">Gallery</a>
-          </li>
-          <li>
-            <a href="Testimonials.html">Testimonials</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="scheduleCon">
-      <div class="form-section">
-        <form>
-          <h3>Contact Us</h3>
-          <input
-            type="text"
-            placeholder="Your Name"
-            style="
-              padding: 12px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              font-size: 14px;
-            "
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            style="
-              padding: 12px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              font-size: 14px;
-            "
-          />
-          <input
-            type="date"
-            style="
-              padding: 12px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              font-size: 14px;
-            "
-          />
-          <textarea
-            placeholder="Tell us about your event"
-            style="
-              padding: 12px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              font-size: 14px;
-              resize: vertical;
-            "
-            rows="4"
-          ></textarea>
-          <button class="submit">Schedule Consultation</button>
-        </form>
-        <img class="formimg" src="/Assets/couple6.jpg" />
-      </div>
+      <ul class="nav">
+        <li>
+          <a href="/schedule.html">Booking</a>
+        </li>
+        <li>
+          <a class="nav-btn" href="/contact.html" data-target="contact"
+            >contact</a
+          >
+        </li>
+        <li>
+          <a href="/gallery.html">gallery</a>
+        </li>
+        <li>
+          <a class="nav-btn" herf="#" data-target="--portfolio">portfolio</a>
+        </li>
+        <li>
+          <a class="nav-btn" herf="#" data-target="services">services</a>
+        </li>
+      </ul>
+    </header>
+    <div class="main">
+      <h1><span>c</span>ontact <span>U</span>s</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad
+        corrupti rerum adipisci quaerat voluptatum blanditiis, asperiores earum
+        nesciunt nobis fugiat sit consequuntur eaque repellat dolore
+        necessitatibus? Accusamus, alias porro.
+      </p>
     </div>
-    <footer>
-      <p>&copy; 2024 Elegant Weddings Event Center. All rights reserved.</p>
-    </footer>
+    <div class="scheduleCon">
+      <img class="forming" src="/Assets/couple6.jpg" />
+      <form class="contact">
+        <h3>Contact Us</h3>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="date" />
+        <textarea placeholder="Tell us about your event"></textarea>
+        <button class="submit">Schedule Consultation</button>
+      </form>
+      <footer>
+        <p>&copy; 2024 Elegant Weddings Event Center. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
   <script src="/script.js"></script>
 </html>

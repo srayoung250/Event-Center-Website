@@ -1,10 +1,23 @@
 const navbarToggle = document.querySelector(".hamburger"),
+  imageElements = document.querySelectorAll(".pic"),
   navLinks = document.querySelector(".navbarContainer");
 
 navbarToggle.addEventListener("click", () => {
   navbarToggle.classList.toggle("active");
   navLinks.classList.toggle("active");
 });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log(entry.target);
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+imageElements.forEach((el) => observer.observe(el));
 
 const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),

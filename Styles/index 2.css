@@ -11,6 +11,10 @@
 
 :root {
   --primary: #ff0066;
+  --secondary-clr: #ffffff;
+  --text-clr: #000000;
+  --font-main: "Italianno", cursive;
+  --font-sec: "Great Vibes", cursive;
 }
 body {
   position: relative;
@@ -34,16 +38,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 100px;
-  background: transparent;
+  background: var(--secondary-clr,) r g b/ 0.25;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: 1s;
   z-index: 1300;
+  box-shadow: 0 0 50px rgb(from var(--text-clr) r g b/ 0.35);
 }
-header {
-  background: #ffffff;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
-}
+
 .hamburger {
   display: none;
 }
@@ -92,42 +94,6 @@ header {
 }
 .nav li a:hover {
   color: var(--primary);
-}
-.search {
-  position: relative;
-  width: 300px;
-  height: 40px;
-  transition: 0.5s;
-}
-
-.search input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: #000000;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-  outline: none;
-  padding: 0 10px 0 15px;
-}
-.search input::placeholder {
-  color: #000000;
-  text-transform: uppercase;
-  font-weight: 350;
-}
-
-.search ion-icon {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  border-left: 1px solid rgba(0, 0, 0, 0.35);
-  padding-left: 8px;
 }
 
 /*___________________________________________________________________
@@ -191,6 +157,13 @@ _____________________________________________________________________*/
   font-weight: 200;
   font-size: 2.5em;
   letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+.bg-slide span {
+  color: var(--primary);
 }
 
 .bg-slide.active .content {
@@ -299,55 +272,23 @@ _____________________________________________________________________*/
 .share a ion-icon {
   font-size: 1.8em;
 }
-.lead {
-  position: absolute;
-  bottom: 30px;
-  right: 50%;
-  z-index: 1200;
-}
-.lead a ion-icon {
-  color: #000000;
-  font-size: 1.8em;
-  cursor: pointer;
-}
-.lead::after,
-.lead::before {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background-color: #000000;
-  border-radius: 5px;
-}
-.lead::before {
-  position: absolute;
-  right: 90%;
-  bottom: 20%;
-  z-index: 1200;
-  top: 40%;
-}
-.lead::after {
-  position: absolute;
-  left: 90%;
-  z-index: 1200;
-  top: 40%;
+.message {
+  font-family: "roboto", sans-serif;
+  background: var(--text-clr);
+  color: var(--secondary-clr);
+  font-size: 1.5em;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 12px 32px;
+  position: fixed;
+  bottom: 40px;
+  left: 45%;
+  opacity: 0;
+  transition: 1s;
 }
 
-/*___________________________________________________________________
-Sections General
-_____________________________________________________________________*/
-
-/*___________________________________________________________________
-Services Section
-_____________________________________________________________________*/
-
-/*___________________________________________________________________
-About Section
-_____________________________________________________________________*/
-
-/*___________________________________________________________________
-Perfolio Section
-_____________________________________________________________________*/
-
-/*___________________________________________________________________
-Contact Section
-_____________________________________________________________________*/
+.message.active {
+  opacity: 1;
+  transform: translate(0%, 0);
+  transition: 1s;
+}
