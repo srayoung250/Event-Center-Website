@@ -2,7 +2,15 @@ const slides = document.querySelectorAll(".bg-slide"),
   btns = document.querySelectorAll(".control-btn"),
   message = document.querySelector(".message"),
   shareLink = window.location.href,
-  shareButton = document.querySelector(".share a");
+  shareButton = document.querySelector(".share a"),
+  navbarToggle = document.querySelector(".hamburger"),
+  navLinksToggle = document.querySelector(".nav"),
+  imageElements = document.querySelectorAll(".pic");
+
+navbarToggle.addEventListener("click", () => {
+  navbarToggle.classList.toggle("active");
+  navLinksToggle.classList.toggle("active");
+});
 
 let index = 0;
 

@@ -15,6 +15,8 @@
   --text-clr: #000000;
   --font-main: "Italianno", cursive;
   --font-sec: "Great Vibes", cursive;
+  --font-par: "montserrat", Roman;
+  --font-size: clamp(1.5rem, 5vw, 3rem);
 }
 body {
   position: relative;
@@ -48,27 +50,27 @@ header {
 
 .hamburger {
   display: none;
-}
-.hamburger.active {
-  display: flex;
   flex-direction: column;
   background: transparent;
   border: none;
   width: 30px;
   height: 30px;
   row-gap: 4px;
+  justify-content: center;
 }
-.hamburger.active .bar {
+.hamburger .bar {
   background-color: black;
   border-radius: 2px;
-  width: 23px;
+  width: 30px;
   height: 3px;
+  border-radius: 20%;
+  transition: 0.5s;
 }
 
 .logo {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-sec);
   text-transform: capitalize;
-  font-size: 40px;
+  font-size: var(--font-size);
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
@@ -84,21 +86,18 @@ header {
 }
 .nav li a {
   color: black;
+  font-family: var(--font-par);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  font-weight: 300;
+  font-weight: 500;
   padding: 10px;
   transition: 0.5s;
 }
 .nav li a:hover {
   color: var(--primary);
 }
-
-/*___________________________________________________________________
-Mobile Nav
-_____________________________________________________________________*/
 
 /*___________________________________________________________________
 Banner
@@ -147,13 +146,13 @@ _____________________________________________________________________*/
   visibility: hidden;
 }
 .bg-slide .content h1 {
-  font-family: "great vibes";
+  font-family: var(--font-sec);
   font-style: normal;
   font-size: 6em;
   text-transform: capitalize;
 }
 .bg-slide .content p {
-  font-family: "Italianno", cursive;
+  font-family: var(--font-main);
   font-weight: 200;
   font-size: 2.5em;
   letter-spacing: 1px;
@@ -200,9 +199,9 @@ _____________________________________________________________________*/
 .controls {
   position: absolute;
   bottom: 20px;
-  width: 100%;
+  width: auto;
   z-index: 10;
-  left: 90%;
+  right: 10px;
   gap: 20px;
   margin-bottom: 0px;
   display: flex;
@@ -218,7 +217,7 @@ _____________________________________________________________________*/
   transition: 0.5s;
   border: none;
   background: none;
-  font-style: "Great Vibes", cursive;
+  font-style: var(--font-sec);
   font-size: 2.5em;
   font-weight: 800;
   line-height: 1em;
@@ -233,7 +232,7 @@ _____________________________________________________________________*/
   position: absolute;
   content: "";
   top: 50%;
-  left: -7%;
+  right: 200px;
   width: 90px;
   height: 2px;
   background: #000000;
@@ -282,13 +281,77 @@ _____________________________________________________________________*/
   padding: 12px 32px;
   position: fixed;
   bottom: 40px;
-  left: 45%;
   opacity: 0;
   transition: 1s;
+  z-index: 2000;
+  left: 50%;
+  transform: translateX(-80%);
 }
 
 .message.active {
   opacity: 1;
-  transform: translate(0%, 0);
+  transform: translateX(0%, 0);
   transition: 1s;
+}
+
+/*___________________________________________________________________
+Mobile Nav
+_____________________________________________________________________*/
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1200px) {
+  .hamburger {
+    z-index: 200;
+    display: flex;
+  }
+  .bg-slide .content h1 {
+    font-size: 4rem;
+  }
+
+  .bg-slide .content p {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: -10px;
+  }
+  .nav {
+    display: none;
+  }
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    top: 0;
+    right: 0;
+    padding: 100px 0;
+    background-color: rgba(255, 255, 255, 0.754);
+  }
+  .nav li a {
+    font-size: var(--font-size);
+    font-style: var(--font-main);
+    font-weight: 600;
+  }
+  .nav li {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav.active {
+    width: 100%;
+    align-items: anchor-center;
+  }
+  .nav li a {
+    font-size: 3rem;
+    font-weight: 600;
+  }
 }

@@ -49,21 +49,20 @@ header {
 }
 .hamburger {
   display: none;
-}
-.hamburger.active {
-  display: flex;
   flex-direction: column;
   background: transparent;
   border: none;
   width: 30px;
   height: 30px;
   row-gap: 4px;
+  justify-content: center;
 }
-.hamburger.active .bar {
+.hamburger .bar {
   background-color: black;
   border-radius: 2px;
-  width: 23px;
+  width: 30px;
   height: 3px;
+  border-radius: 20%;
 }
 
 .logo {
@@ -206,6 +205,11 @@ footer {
   width: 100%;
   z-index: 20;
 }
+
+/*___________________________________________________________________
+Mobile Nav
+_____________________________________________________________________*/
+
 .nav-links-active.active {
   display: flex;
 }
@@ -290,15 +294,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-  }
-  .navbarContainer {
-    width: 100%;
-  }
-  .navbarContainer.active {
-    display: flex;
-  }
   .hero-container button {
     min-width: 265px;
     font-size: 30px;

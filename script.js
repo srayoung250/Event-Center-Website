@@ -1,10 +1,15 @@
-const navbarToggle = document.querySelector(".hamburger"),
-  imageElements = document.querySelectorAll(".pic"),
-  navLinks = document.querySelector(".navbarContainer");
+const slides = document.querySelectorAll(".bg-slide"),
+  btns = document.querySelectorAll(".control-btn"),
+  message = document.querySelector(".message"),
+  shareLink = window.location.href,
+  shareButton = document.querySelector(".share a"),
+  navbarToggle = document.querySelector(".hamburger"),
+  navLinksToggle = document.querySelector(".nav"),
+  imageElements = document.querySelectorAll(".pic");
 
 navbarToggle.addEventListener("click", () => {
   navbarToggle.classList.toggle("active");
-  navLinks.classList.toggle("active");
+  navLinksToggle.classList.toggle("active");
 });
 
 const observer = new IntersectionObserver((entries) => {

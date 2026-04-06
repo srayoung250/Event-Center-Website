@@ -15,7 +15,10 @@
   --text-clr: #000000;
   --font-main: "Italianno", cursive;
   --font-sec: "Great Vibes", cursive;
+  --font-par: "montserrat", Roman;
+  --font-size: clamp(1.5rem, 5vw, 3rem);
 }
+
 body {
   position: relative;
   background: var(--secondary-clr);
@@ -49,21 +52,21 @@ header {
 }
 .hamburger {
   display: none;
-}
-.hamburger.active {
-  display: flex;
   flex-direction: column;
   background: transparent;
   border: none;
   width: 30px;
   height: 30px;
   row-gap: 4px;
+  justify-content: center;
 }
-.hamburger.active .bar {
+.hamburger .bar {
   background-color: black;
   border-radius: 2px;
-  width: 23px;
+  width: 30px;
   height: 3px;
+  border-radius: 20%;
+  transition: 0.5s;
 }
 
 .logo {
@@ -86,35 +89,17 @@ header {
 }
 .nav li a {
   color: black;
+  font-family: var(--font-par);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  font-weight: 300;
+  font-weight: 500;
   padding: 10px;
   transition: 0.5s;
 }
 .nav li a:hover {
   color: var(--primary-clr);
-}
-
-.nav-links-two a:hover {
-  color: rgb(194, 180, 106);
-}
-.nav-links-one a:hover {
-  color: rgb(194, 180, 106);
-}
-.nav-links-active.active {
-  display: flex;
-}
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
 }
 
 /*______________________________________________________________
@@ -357,26 +342,37 @@ footer {
   padding: 20px;
 }
 
+/*___________________________________________________________________
+Mobile Nav
+_____________________________________________________________________*/
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 1200px) {
   .hamburger {
     z-index: 200;
     display: flex;
-    margin-left: auto;
   }
-  .logo-box1 {
+  .heading h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .heading p {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: -10px;
+  }
+  .nav {
+    display: none;
+  }
+  .nav.active {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 166px;
-    justify-content: center;
-    flex-grow: 1;
-  }
-  .logo-box2 {
-    display: none;
-  }
-  .navbarContainer {
-    display: none;
-    justify-content: revert;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
@@ -387,65 +383,23 @@ footer {
     padding: 100px 0;
     background-color: rgba(255, 255, 255, 0.754);
   }
-  .images {
-    column-gap: 20px; /* This is my absolute minimum gap */
+  .nav li a {
+    font-size: var(--font-size);
+    font-style: var(--font-main);
+    font-weight: 600;
   }
-  .nav-links-one a,
-  .nav-links-two a {
-    font-size: 30px;
-  }
-  .nav-links-one,
-  .nav-links-two {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-  }
-  .nav-links-one li,
-  .nav-links-two li {
+  .nav li {
     padding: 20px;
-  }
-  .hero-container button {
-    font-size: 30px;
-    transform: translate(-50%, 170%);
-  }
-  .nav-links-two li:hover {
-    background-color: #ecec8a7b;
-  }
-  .nav-links-one li:hover {
-    background-color: #ecec8a7b;
-  }
-  .nav-links-one a:hover {
-    color: black;
-  }
-  .nav-links-two a:hover {
-    color: black;
-  }
-  .navbarContainer.active {
-    display: flex;
   }
 }
 
 @media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-  }
-  .navbarContainer {
+  .nav.active {
     width: 100%;
+    align-items: anchor-center;
   }
-  .navbarContainer.active {
-    display: flex;
-  }
-  .hero-container button {
-    min-width: 265px;
-    font-size: 30px;
-    transform: translate(-50%, 170%);
-  }
-  .navbarContainer {
-    align-content: center;
-    align-items: center;
-  }
-  .nav-links-one li,
-  .nav-links-two li {
-    align-self: center;
+  .nav li a {
+    font-size: 3rem;
+    font-weight: 600;
   }
 }
