@@ -15,6 +15,8 @@
   --text-clr: #000000;
   --font-main: "Italianno", cursive;
   --font-sec: "Great Vibes", cursive;
+  --font-par: "montserrat", Roman;
+  --font-size: clamp(1.5rem, 5vw, 3rem);
 }
 body {
   position: relative;
@@ -87,10 +89,11 @@ header {
 .nav li a {
   color: black;
   text-decoration: none;
+  font-family: var(--font-par);
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  font-weight: 300;
+  font-weight: 500;
   padding: 10px;
   transition: 0.5s;
 }
@@ -104,42 +107,6 @@ header {
   transition: 0.5s;
 }
 
-.search input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: #000000;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-  outline: none;
-  padding: 0 10px 0 15px;
-}
-.search input::placeholder {
-  color: #000000;
-  text-transform: uppercase;
-  font-weight: 350;
-}
-
-.search ion-icon {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  border-left: 1px solid rgba(0, 0, 0, 0.35);
-  padding-left: 8px;
-}
-
-.nav-links-two a:hover {
-  color: rgb(194, 180, 106);
-}
-.nav-links-one a:hover {
-  color: rgb(194, 180, 106);
-}
 /*________________________________________________________________________________
 Main Section
 _________________________________________________________________________________*/
@@ -159,7 +126,7 @@ ________________________________________________________________________________
 }
 .gallery p {
   font-family: var(--font-main);
-  font-size: 50px;
+  font-size: var(--font-size);
   font-weight: lighter;
   padding: 40px 50px 150px 0px;
   width: 100%;
@@ -196,19 +163,6 @@ footer {
   justify-content: center;
   padding: 20px;
 }
-.nav-links-active.active {
-  display: flex;
-}
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 /*___________________________________________________________________
 Mobile Nav
 _____________________________________________________________________*/
@@ -227,13 +181,11 @@ _____________________________________________________________________*/
     z-index: 200;
     display: flex;
   }
-  .bg-slide .content h1 {
+  .gallery h1 {
     font-size: 4rem;
   }
-
-  .bg-slide .content p {
+  .gallery p {
     font-size: clamp(1.5rem, 5vw, 3rem);
-    line-height: -10px;
   }
   .nav {
     display: none;
@@ -254,6 +206,9 @@ _____________________________________________________________________*/
     font-size: var(--font-size);
     font-style: var(--font-main);
     font-weight: 600;
+  }
+  .nav li {
+    padding: 20px;
   }
 }
 
