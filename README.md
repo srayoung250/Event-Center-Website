@@ -27,28 +27,12 @@ Plaintext
 ├── style.css        # Global styles and responsive media queries
 ├── script.js       # Navigation and slider logic
 └── assets/         # High-resolution venue imagery
+
 🔧 Technical Highlights
 Centered Fixed Components
-The website uses a robust centering technique for fixed elements (like status messages) to ensure they remain perfectly aligned regardless of content length:
+The website uses a robust centering technique for fixed elements (like status messages) to ensure they remain perfectly aligned regardless of content length.
 
-CSS
-.message {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-}
 Fluid Sizing
 By utilizing relative units, the layout maintains its integrity on ultra-wide monitors and small mobile screens alike, preventing the "squashed" look of traditional pixel-based designs.
-
-🤝 Contributing
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
 
 Author: srayoung250
